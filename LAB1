@@ -1,0 +1,46 @@
+#1
+print("Hi, i am a student)
+      
+
+#2
+if 10<14:
+      print("Ten is smaller than fourteen")
+      
+#3
+"""
+This is
+a comment written in more
+than just one line
+"""
+      
+#4
+x=str(3) #x will be '3'
+x=int(3) #x will be 3
+x=float(3)#x will be 3.0
+
+#5
+subjectss=["PP2","HISTORY","MATH"]
+x,  y, z,=subjects
+print(x)
+print(y)
+print(z)
+
+#6
+x="awesome"
+
+def sonic():
+    print("sleeping is" +x)
+
+sonic()
+
+
+#7
+x=1 #int
+x=3.9 #float
+x=2h #complex
+
+#8
+x = float(1)     # x will be 1.0
+y = float(2.8)   # y will be 2.8
+z = float("3")   # z will be 3.0
+w = float("4.2") # w will be 4.2
