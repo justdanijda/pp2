@@ -1,3 +1,47 @@
+###classes
+#1
+class StringManipulator:
+   
+
+    def __init__(self):
+        
+        self.input_string = ""
+
+    def getString(self):
+        
+        self.input_string = input("Enter a string: ")
+
+    def printString(self):
+       
+        print(self.input_string.upper())
+
+
+manipulator = StringManipulator()
+manipulator.getString()
+manipulator.printString()
+
+#2
+class Shape:
+
+    def area(self):
+        return 0
+
+class Square(Shape):
+
+    def __init__(self, length):
+    
+        self.length = length
+
+    def area(self):
+       
+        return self.length ** 2
+
+
+
+
+
+
+
 ###Function1
 #1
 n=float(input())
