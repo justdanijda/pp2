@@ -26,9 +26,9 @@ def spy_game(nums):
     index = 0 
     
     for num in nums:
-        if num == sequence[index]:
+        if num == s[index]:
             index += 1  
-            if index == len(sequence): 
+            if index == len(s): 
                 return True
     return False
 
