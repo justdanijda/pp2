@@ -1,0 +1,116 @@
+'''Dir and File'''
+#1
+from pathlib import Path
+
+def list_contents(path="."):
+    p = Path(path)
+    if not p.exists():
+        print("Path does not exist")
+        return
+
+    print("\nDirectories:")
+    print([d.name for d in p.iterdir() if d.is_dir()])
+
+    print("\nFiles:")
+    print([f.name for f in p.iterdir() if f.is_file()])
+
+    print("\nAll items:")
+    print([item.name for item in p.iterdir()])
+
+#2
+import os
+
+def check_access(path):
+    print(f"Path: {path}")
+    print(f"Exists: {os.path.exists(path)}")
+    print(f"Readable: {os.access(path, os.R_OK)}")
+    print(f"Writable: {os.access(path, os.W_OK)}")
+    print(f"Executable: {os.access(path, os.X_OK)}")
+
+#3
+from pathlib import Path
+
+def check_path(path):
+    p = Path(path)
+    if p.exists():
+        print("Path exists")
+        print(f"Directory: {p.parent}")
+        print(f"Filename: {p.name}")
+    else:
+        print("Path does not exist")
+
+#4
+def count_lines(filename):
+    try:
+        with open(filename, "r") as file:
+            return sum(1 for _ in file)
+    except FileNotFoundError:
+        print("File not found")
+        return 0
+
+#5
+def write_list_to_file(filename, items):
+    with open(filename, "w") as file:
+        for item in items:
+            file.write(str(item) + "\n")
+
+#6
+import string
+
+def create_files():
+    for letter in string.ascii_uppercase:
+        with open(f"{letter}.txt", "w") as file:
+            file.write(f"This is {letter}.txt\n")
+
+#7
+import shutil
+
+def copy_file(source, destination):
+    try:
+        shutil.copy(source, destination)
+        print(f"Copied {source} to {destination}")
+    except FileNotFoundError:
+        print("Source file not found")
+
+#8
+import os
+
+def delete_file(path):
+    if os.path.exists(path):
+        if os.access(path, os.W_OK):
+            os.remove(path)
+            print(f"Deleted: {path}")
+        else:
+            print("No write permission to delete the file")
+    else:
+        print("File does not exist")
+
+'''Builtin Functions'''
+#1
+from functools import reduce
+import operator
+
+def multiply_list(numbers):
+    return reduce(operator.mul, numbers, 1)
+
+#2
+def count_case(s):
+    upper = sum(map(str.isupper, s)) 
+    lower = sum(map(str.islower, s)) 
+    return {"Uppercase": upper, "Lowercase": lower}
+
+#3
+def is_palindrome(s):
+    return s == s[::-1]
+
+#4
+import time  
+from math import * 
+
+def delayed_sqrt(number, delay):
+    time.sleep(delay / 1000) 
+    return {sqrt(number)}
+
+#5
+def all_true(t):
+    return all(t)
